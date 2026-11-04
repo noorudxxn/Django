@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Image Gallery</title>
+   {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    <h1>My Image Gallery</h1>
+
+    <div class="gallery">
+
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500" alt="Nature">
+            <p>Beautiful Nature</p>
+        </div>
+
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500" alt="Night Sky">
+            <p>Beautiful Night Sky</p>
+        </div>
+
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500" alt="Mountain">
+            <p>Beautiful Mountains</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
