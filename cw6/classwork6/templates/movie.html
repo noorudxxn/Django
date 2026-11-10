@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Details</title>
+</head>
+<body>
+
+    <h2>Add Movie Details</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Movie Name:</label>
+        <input type="text" name="movie_name" required>
+
+        <br><br>
+
+        <label>Release Year:</label>
+        <input type="number" name="release_year" required>
+
+        <br><br>
+
+        <button type="submit">Save Movie</button>
+    </form>
+
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+
+</body>
+</html>
