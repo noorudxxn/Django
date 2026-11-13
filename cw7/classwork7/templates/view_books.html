@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Books</title>
+</head>
+<body>
+
+    <h2>All Saved Books</h2>
+
+    {% for book in books %}
+
+        <h3>{{ book.title }}</h3>
+        <p>Author: {{ book.author }}</p>
+        <hr>
+
+    {% empty %}
+
+        <p>No books available.</p>
+
+    {% endfor %}
+
+    <a href="/">Add Another Book</a>
+
+</body>
+</html>
