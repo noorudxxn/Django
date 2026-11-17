@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+</head>
+<body>
+
+    <h1>Student Result</h1>
+
+    <h2>Name: {{ name }}</h2>
+
+    {% if mark %}
+        <h3>Mark: {{ mark }}</h3>
+    {% else %}
+        <h3>Result not found!</h3>
+    {% endif %}
+
+    <a href="{% url 'home' %}">Back to Home</a>
+
+</body>
+</html>
