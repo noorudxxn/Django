@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Management System</title>
+</head>
+<body>
+
+    <h1>Welcome to College Management System</h1>
+
+    <h2>Select Your Section</h2>
+
+    <a href="{% url 'students:student_list' 'Students' %}">
+        View Students
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'teachers:teacher_list' 'Teachers' %}">
+        View Teachers
+    </a>
+
+</body>
+</html>
