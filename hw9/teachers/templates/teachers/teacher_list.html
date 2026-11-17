@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher List</title>
+</head>
+<body>
+
+    <h1>Teachers Page</h1>
+
+    <h2>Welcome {{ message }}!</h2>
+
+    <h3>Teacher List</h3>
+
+    {% for teacher in teachers %}
+        <p>{{ teacher }}</p>
+    {% endfor %}
+
+    <a href="{% url 'home' %}">Back to Home</a>
+
+</body>
+</html>
