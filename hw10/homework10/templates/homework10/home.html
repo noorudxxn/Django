@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+</head>
+<body>
+
+    <h1>Student Management System</h1>
+
+    <a href="{% url 'add_student' %}">Add New Student</a>
+
+    <hr>
+
+    <h2>Search Student</h2>
+
+    <form method="GET">
+
+        <input type="text" name="search"
+               placeholder="Enter student name"
+               value="{{ search|default:'' }}">
+
+        <button type="submit">Search</button>
+
+        <a href="{% url 'home' %}">Clear</a>
+
+    </form>
+
+    <hr>
+
+    <h2>Student List</h2>
+
+    {% for student in students %}
+
+        <h3>{{ student.name }}</h3>
+
+        <p>Class: {{ student.student_class }}</p>
+
+        <p>Age: {{ student.age }}</p>
+
+        <a href="{% url 'edit_student' student.id %}">Edit</a>
+
+        <a href="{% url 'delete_student' student.id %}">Delete</a>
+
+        <hr>
+
+    {% empty %}
+
+        <p>No students found.</p>
+
+    {% endfor %}
+
+</body>
+</html>
