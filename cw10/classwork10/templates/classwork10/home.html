@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management</title>
+</head>
+<body>
+
+    <h1>Library Book List</h1>
+
+    <a href="{% url 'add_book' %}">Add New Book</a>
+
+    <hr>
+
+    {% for book in page_obj %}
+
+        <h2>{{ book.title }}</h2>
+
+        <p>Author: {{ book.author }}</p>
+
+        <p>Year: {{ book.year }}</p>
+
+        <a href="{% url 'edit_book' book.id %}">Edit</a>
+
+        <a href="{% url 'delete_book' book.id %}">Delete</a>
+
+        <hr>
+
+    {% empty %}
+
+        <p>No books available.</p>
+
+    {% endfor %}
+
+
+    <!-- Pagination -->
+
+    {% if page_obj.has_previous %}
+
+        <a href="?page=1">First</a>
+
+        <a href="?page={{ page_obj.previous_page_number }}">
+            Previous
+        </a>
+
+    {% endif %}
+
+
+    <span>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+
+    {% if page_obj.has_next %}
+
+        <a href="?page={{ page_obj.next_page_number }}">
+            Next
+        </a>
+
+        <a href="?page={{ page_obj.paginator.num_pages }}">
+            Last
+        </a>
+
+    {% endif %}
+
+</body>
+</html>
